@@ -38,3 +38,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build_output/wwwroot
           publish_branch: gh-pages
+
+          # Add ReWash Plus Error 404 Page
+      - name: Add 404.html for Blazor routing
+        run: cp build_output/wwwroot/index.html build_output/wwwroot/404.html
+
