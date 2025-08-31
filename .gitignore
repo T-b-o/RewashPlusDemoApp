@@ -1,0 +1,24 @@
+# Build results
+bin/
+obj/
+build_output/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# IDE
+*.dbmdl
+*.jfm
+
+# Logs
+*.log
+
+# Others
+*.pdb
+*.cache
