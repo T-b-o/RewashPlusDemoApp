@@ -3,7 +3,7 @@ name: Deploy Rewash+ to GitHub Pages
 on:
   push:
     branches:
-      - main   # or "master" if that's your main branch
+      - main   # change if your default branch is "master"
 
 jobs:
   build-and-deploy:
@@ -26,6 +26,11 @@ jobs:
 
       - name: Publish
         run: dotnet publish -c Release -o build_output
+
+      # Fix base href automatically
+      - name: Fix base href for GitHub Pages
+        run: |
+          sed -i 's|<base href="/" />|<base href="/RewashPlusDemoApp/" />|' build_output/wwwroot/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
